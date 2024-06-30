@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gypsum Requirement</title>
+    <link rel="icon" type="image/x-icon" href="images/icon-72.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-darkblue navbar-dark justify-content-center">
+        &nbsp;&nbsp;
+        <a class="navbar-brand" href="index.html">
+            <img src="images/icon.png" alt="Logo" class="d-inline-block align-text-top" width="120">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            &nbsp;
+            <ul class="navbar-nav" id="navBtns">
+                <li class="nav-item">
+                    <a id="navCalculator" class="nav-link active largeBoldFont" href="#">&nbsp;&nbsp;CALCULATOR</a>
+                </li>
+                &nbsp;
+                <li class="nav-item">
+                    <a id="navAbout" class="nav-link largeBoldFont" href="#">&nbsp;&nbsp;ABOUT</a>
+                </li>
+                &nbsp;
+                <li class="nav-item">
+                    <a id="navEquation" class="nav-link largeBoldFont" href="#">&nbsp;&nbsp;EQUATION</a>
+                </li>
+                &nbsp;
+                <li class="nav-item">
+                    <a id="navContact" class="nav-link largeBoldFont" href="#">&nbsp;&nbsp;CONTACT</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="root" class="container center-div">
+        <div id="calculatorDiv">
+            <br>
+            <div id="calculatorTitleDiv">
+                <h2 class="text-center">Gypsum Requirement Calculator</h2>
+            </div>
+            <br>
+            <br>
+            <form id="myForm" class="container">
+                <div class="row mb-3">
+                    <label for="depth" class="col-sm-8 col-form-label text-sm-end"><strong>Soil Depth
+                            (m):</strong></label>
+                    <div class="col-sm-4 clearable">
+                        <input type="number" class="form-control" id="depth" name="depth" required min="0" step="0.01">
+                        <button type="button" class="clear-button" id="clearDepthButton">&times;</button>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="density" class="col-sm-8 col-form-label text-sm-end"><strong>Soil Bulk Density (Mg
+                            m<sup>-3</sup>):</strong></label>
+                    <div class="col-sm-4 clearable">
+                        <input type="number" class="form-control" id="density" name="density" required min="0"
+                            step="0.01">
+                        <button type="button" class="clear-button" id="clearDensityButton">&times;</button>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="cec" class="col-sm-8 col-form-label text-sm-end"><strong>CEC (mmol<sub>c</sub>
+                            kg<sup>-1</sup>):</strong></label>
+                    <div class="col-sm-4 clearable">
+                        <input type="number" class="form-control" id="cec" name="cec" required min="0" step="0.01">
+                        <button type="button" class="clear-button" id="clearCecButton">&times;</button>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="purity" class="col-sm-8 col-form-label text-sm-end"><strong>Gypsum Purity
+                            (%):</strong></label>
+                    <div class="col-sm-4 clearable">
+                        <input type="number" class="form-control" id="purity" name="purity" required min="0.1" max="100"
+                            step="0.1">
+                        <button type="button" class="clear-button" id="clearPurityButton">&times;</button>
+                    </div>
+                </div>
+                <br /><br />
+
+                <div class="mb-3">
+                    <h5>I'd like to use:</h5>
+                    <div class="center-div">
+                        <label class="radio-inline">
+                            <input type="radio" name="optradio" checked="checked" value="esp">&nbsp;<strong>ESP</strong>
+                        </label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label class="radio-inline">
+                            <input type="radio" name="optradio" value="sar">&nbsp;<strong>SAR</strong>
+                        </label>
+                    </div>
+                    <br />
+                    <div id="espInputDiv">
+                        <div class="row mb-3">
+                            <label for="initialESP" class="col-sm-8 col-form-label text-sm-end"><strong>Initial ESP
+                                    (%):</strong></label>
+                            <div class="col-sm-4 clearable">
+                                <input type="number" class="form-control" id="initialESP" name="initialESP" min="0.1"
+                                    max="100" step="0.1" required>
+                                <button type="button" class="clear-button" id="clearInitialESPButton">&times;</button>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="targetESP" class="col-sm-8 col-form-label text-sm-end"><strong>Target ESP
+                                    (%):</strong></label>
+                            <div class="col-sm-4 clearable">
+                                <input type="number" class="form-control" id="targetESP" name="targetESP" min="0"
+                                    max="100" step="0.1" required>
+                                <button type="button" class="clear-button" id="clearTargetESPButton">&times;</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="sarInputDiv" class="nodisplay">
+                        <div class="row mb-3">
+                            <label for="initialSAR" class="col-sm-8 col-form-label text-sm-end"><strong>Initial SAR
+                                    (%):</strong></label>
+                            <div class="col-sm-4 clearable">
+                                <input type="number" class="form-control" id="initialSAR" name="initialSAR" min="0.1"
+                                    max="100" step="0.1">
+                                <button type="button" class="clear-button" id="clearInitialSARButton">&times;</button>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="targetSAR" class="col-sm-8 col-form-label text-sm-end"><strong>Target SAR
+                                    (%):</strong></label>
+                            <div class="col-sm-4 clearable">
+                                <input type="number" class="form-control" id="targetSAR" name="targetSAR" min="0"
+                                    max="100" step="0.1">
+                                <button type="button" class="clear-button" id="clearTargetSARButton">&times;</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3" id="calculateBtnDiv">
+                    <div class="d-grid">
+                        <button type="submit" id="calculateBtn" class="btn btn-primary btn-block">
+                            <h4>Calculate</h4>
+                        </button>
+                    </div>
+                </div>
+                <hr>
+                <h5>Your Gypsum Requirement Result:</h5>
+
+                <div class="mb-3" id="resultDiv">
+                    <br>
+                    <div class="resultText">
+                        <input type="text" id="mghaResult" readonly class="resultText2">
+                        <label>
+                            Mg/ha
+                        </label>
+                    </div>
+                    <span>or</span>
+                    <br>
+                    <div class="resultText">
+                        <input type="text" id="ustonResult" readonly class="resultText2">
+                        <label>
+                            Ton/Acre
+                        </label>
+                    </div>
+                    <br>
+                </div>
+                <div class="d-grid">
+                    <button type="button" id="resetBtn" class="btn btn-secondary btn-block">RESET</button>
+                </div>
+                <br>
+        </div>
+        </form>
+    </div>
+    <div id="aboutDiv" class="nodisplay">
+        <p>This is about page.</p>
+        <div id="intro">
+            <br />
+            <p>
+                Welcome to the NDSU gypsum requirement (GR) mobile app. The calculations are based on the
+                equation of Oster et al. (1999).
+                To determine GR (in Mg/ha; e.g. 1 Mg/ha = 0.44609 tons/acre) the equation requires knowledge of
+                the 1) depth, D,
+                (in meters; e.g. 0.15 m = 6 inches) to which the gypsum will be applied, 2) the bulk density,
+                Bd, of the soil (in Mg/m3; e.g. 1 Mg/m3 = 1 g/cm3; default value in the calculator is 1.47
+                Mg/m3),
+                3) the cation exchange capacity, CEC, of the soil (in mmolc/kg; e.g. 100mmolc/kg = 10cmolc/kg =
+                10meq/100g soil), 4) the reaction efficiency factor, F,
+                which is unitless (e.g. choose 1.3 if the final ESP is 5 and 1.1 if the final ESP is 15 or
+                greater), 5) the initial ESP, ESPi,
+                which is determined by a qualified laboratory (ESP is a % of the Na ions on the soil's exchange
+                sites), 6) the target, final ESP, ESPf, and 7) the purity of the gypsum being used (in %).
+            </p>
+            <p>
+                You will need to adjust the final mass of gypsum based on the moisture content of the product
+                you are using. For example,
+                if the moisture content is 20% then take GR x 1.2 to get the mass of moist gypsum needed to
+                supply GR.
+            </p>
+            <p>
+                You can substitute the sodium adsorption ratio (SAR) determined from a saturated paste extract
+                for the ESP if the ESP is less than 50.
+            </p>
+            <p>
+                The cost of applying gypsum will be much greater than the costs for determining the soil metrics
+                outlined above so have your soils analyzed by your regional soil testing laboratory.
+                Depth of your soil sample should be great enough to understand the depth that gypsum should be
+                incorporated.
+                Gypsum should be placed as near to the depth of sodic behavior as possible to maximize its
+                effectiveness.
+            </p>
+            <p>
+                [Reference]<br />
+                <i>
+                    Oster, J.D., I. Shainberg, and I.P. Abrol. 1999. Reclamation of salt-affected soils. In 806
+                    Agricultural Drainage.
+                    Agronomy Monograph no. 38. American Society of Agronomy, 807 Crop Science Society of
+                    America, Soil Science Society of America,
+                    677 S. Segoe Rd. 808 Madison, WI 53711. USA. p.659-691.
+                </i>
+            </p>
+
+            <p style="background-color:antiquewhite;">[App Developer] <b>Honggang Bu</b></p>
+        </div>
+
+    </div>
+    <div id="equationDiv" class="nodisplay">
+        <p>This is equation page.</p>
+    </div>
+    <div id="contactDiv" class="nodisplay">
+        <p>This is contact page.</p>
+        <br />
+        <h5>For more information, please contact:</h5>
+        <div>
+            <a href="https://www.ndsu.edu/soils/personnel/faculty/dr_tom_desutter/" target="_blank"><img
+                    src="images/DeSutter.jpg" alt="Dr. Tom DeSutter" class="photocss img-circle"></a>
+            <br />
+            <a href="https://www.ndsu.edu/soils/personnel/faculty/dr_tom_desutter/" target="_blank"><span
+                    id="TomName">Dr. Tom DeSutter</span></a>
+            <p style="font-size:small; font-weight:bold;">Professor <br /> Soil Science Program Leader</p>
+        </div>
+        <br />
+
+        <div id="contactInfo">
+            <p><u>Office:</u> <b>233 Walster Hall, Box 6050, NDSU</b></p>
+            <p><u>Phone:</u> <b>701-231-8690</b></p>
+            <p><u>Email:</u> <b>Thomas.Desutter@ndsu.edu</b></p>
+        </div>
+
+    </div>
+
+    <footer class="text-center">
+        Copyright &copy;
+        <script>document.write(new Date().getFullYear())</script>
+        &nbsp;&nbsp;
+        <span>Department of Soil Science, North Dakota State University</span>
+    </footer>
+
+</body>
+
+</html>
