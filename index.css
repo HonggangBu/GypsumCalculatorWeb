@@ -11,9 +11,10 @@ body {
 }
 
 footer {
-    padding: 5px;
+    padding: 15px;
     background-color: darkslateblue;
     color: white;
+    text-align: center;
 }
 
 .bg-darkblue {
@@ -60,16 +61,19 @@ footer {
 }
 
 .resultText {
-    text-align: left;
+    text-align: center;
     font-size: large;
     font-weight: bolder;
-    margin-left: 1em;
 }
 
 .resultText2 {
     font-size: large;
     font-weight: bolder;
     text-align: center;
+    width: 90%;
+    box-sizing: border-box;
+    padding: 5px;
+    background-color: aliceblue;
 }
 
 #calculatorTitleDiv {

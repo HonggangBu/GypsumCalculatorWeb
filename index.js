@@ -187,9 +187,11 @@ function Calculation() {
             var result1 = GypsumRequirement(f, depth, density, cec, initialValue, targetValue, purity);
             var result2 = result1 * 0.44609;
 
-            mghaResult.value = result1.toFixed(1);
-            ustonResult.value = result2.toFixed(1);
+            mghaResult.value = result1.toFixed(1) + '    Mg/Ha';
+            ustonResult.value = result2.toFixed(1) + '    US Ton/Acre';
 
+            const resultDiv = document.getElementById('resultDiv');
+            resultDiv.scrollIntoView({ behavior: 'smooth' });
         }
 
     });
