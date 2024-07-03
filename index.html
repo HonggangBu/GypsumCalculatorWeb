@@ -49,10 +49,9 @@
     <div id="root" class="container center-div">
         <div id="calculatorDiv">
             <br>
-            <div id="calculatorTitleDiv">
+            <div class="titleDiv">
                 <h2 class="text-center">Gypsum Requirement Calculator</h2>
             </div>
-            <br>
             <br>
             <form id="myForm" class="container">
                 <div class="row mb-3">
@@ -101,7 +100,11 @@
                         <label class="radio-inline">
                             <input type="radio" name="optradio" value="sar">&nbsp;<strong>SAR</strong>
                         </label>
+                        <br>
                     </div>
+                    <p>Note: when the initial ESP value is no less than 50, you can only use ESP for calculating;
+                        otherwise, you can choose either ESP or SAR.</p>
+
                     <br />
                     <div id="espInputDiv">
                         <div class="row mb-3">
@@ -172,84 +175,193 @@
                 <br>
         </div>
         </form>
-    </div>
-    <div id="aboutDiv" class="nodisplay">
-        <p>This is about page.</p>
-        <div id="intro">
+
+        <div id="aboutDiv" class="nodisplay">
+            <br>
+            <div class="titleDiv">
+                <h2 class="text-center">About the Gypsum Requirement Calculator</h2>
+            </div>
+            <br>
+
+            <div id="intro">
+                <br />
+                <p>
+                    Welcome to use the NDSU gypsum requirement (GR) calculator. The calculations are based on the <a
+                        href="#" id="equationLink">
+                        equation</a> of <a href="images/Reclamation of Salt-Affected Soils.pdf" target="_blank">Oster et
+                        al.
+                        (1999)</a>.
+                    To determine GR (in Mg/ha; e.g. 1 Mg/ha = 0.44609 tons/acre) the equation requires knowledge of
+                    the <br>
+                <dl>
+                    <dt>depth of the soil (unit: m)</dt>
+                    <dd>- the depth to which the gypsum will be applied</dd>
+                    <dt>bulk density of the soil (unit: Mg/m<sup>3</sup>)</dt>
+                    <dd>- default value in the calculator is 1.47 Mg/m3</dd>
+                    <dt>cation exchange capacity (unit: mmolc/kg)</dt>
+                    <dd>- e.g. 100mmolc/kg = 10cmolc/kg = 10meq/100g soil</dd>
+                    <dt>reaction efficiency factor (unitless)</dt>
+                    <dd>- e.g. choose 1.3 if the final ESP is 5 and 1.1 if the final ESP is 15 or
+                        greater</dd>
+                    <dt>initial ESP (unit: %)</dt>
+                    <dd>- the initial ESP determined by a qualified laboratory. ESP is a % of the Na ions on the soil's
+                        exchange sites</dd>
+                    <dt>target or final ESP (unit: %)</dt>
+                    <dd>- the desired ESP</dd>
+                    <dt>purity of the gypsum being used (unit: %)</dt>
+                    <dd>- the purity of the gypsum is calculated by dividing Sulphur % by 0.186</dd>
+                </dl>
+                <p>
+                    You will need to adjust the final mass of gypsum based on the moisture content of the product
+                    you are using. For example,
+                    if the moisture content is 20% then take GR x 1.2 to get the mass of moist gypsum needed to
+                    supply GR.
+                </p>
+                <p>
+                    You can substitute the sodium adsorption ratio (SAR) determined from a saturated paste extract
+                    for the ESP if the ESP is less than 50.
+                </p>
+                <p>
+                    The cost of applying gypsum will be much greater than the costs for determining the soil metrics
+                    outlined above so have your soils analyzed by your regional soil testing laboratory.
+                    Depth of your soil sample should be great enough to understand the depth that gypsum should be
+                    incorporated.
+                    Gypsum should be placed as near to the depth of sodic behavior as possible to maximize its
+                    effectiveness.
+                </p>
+                <p>
+                    [Reference]<br />
+                    <a href="images/Reclamation of Salt-Affected Soils.pdf" target="_blank">
+                        <i>
+                            Oster, J.D., I. Shainberg, and I.P. Abrol. 1999. Reclamation of salt-affected soils. In 806
+                            Agricultural Drainage.
+                            Agronomy Monograph no. 38. American Society of Agronomy, 807 Crop Science Society of
+                            America, Soil Science Society of America,
+                            677 S. Segoe Rd. 808 Madison, WI 53711. USA. p.659-691.
+                        </i>
+                    </a>
+                </p>
+
+            </div>
+
+        </div>
+        <div id="equationDiv" class="nodisplay">.
+            <br>
+            <div class="titleDiv">
+                <h2 class="text-center">Equations for Gypsum Requirement Calculator</h2>
+            </div>
+            <br>
+
+            You can choose either of the following equations to calculate the Gypsum Requirement:
+            <p id="fmla" class="equation">
+                GR<sub>adj</sub>=0.86*F*D*&rho;<sub>b</sub>*CEC*(ESP<sub>i</sub>-ESP<sub>f</sub>)/p</p>
+            <br>
+            <p id="fmla" class="equation">
+                GR<sub>adj</sub>=0.86*F*D*&rho;<sub>b</sub>*CEC*(SAR<sub>i</sub>-SAR<sub>f</sub>)/pC
+            <p>
+                Note: The second formula requires that the initial ESP value is less than 50.
+            </p>
+            <br>
+            <hr>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Definition</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><i>GR<sub>adj</sub></i></td>
+                        <td>Amount of gypsum needed. Adjusted by its purity. <br />unit: Mg ha<sup>-1</sup></td>
+                    </tr>
+                    <tr>
+                        <td><i>ESP</i></td>
+                        <td>exchangeable sodium percentage, unit: %</td>
+                    </tr>
+                    <tr>
+                        <td><i>ESP<sub>i</sub></i></td>
+                        <td>initial <i>ESP</i> level</td>
+                    </tr>
+                    <tr>
+                        <td><i>ESP<sub>f</sub></i></td>
+                        <td>final or target <i>ESP</i> level</td>
+                    </tr>
+                    <tr>
+                        <td><i>SAR</i></td>
+                        <td>sodium adsorption ratio, unit: %</td>
+                    </tr>
+                    <tr>
+                        <td><i>SAR<sub>i</sub></i></td>
+                        <td>initial <i>SAR</i> level</td>
+                    </tr>
+                    <tr>
+                        <td><i>SAR<sub>f</sub></i></td>
+                        <td>final or target <i>SAR</i> level</td>
+                    </tr>
+                    <tr>
+                        <td><i>CEC</i></td>
+                        <td>cation exchange capacity, unit: mmol<sub>c</sub> kg<sup>-1</sup></td>
+                    </tr>
+                    <tr>
+                        <td><i>D</i></td>
+                        <td>soil depth, unit: m</td>
+                    </tr>
+                    <tr>
+                        <td><i>&rho;<sub>b</sub></i></td>
+                        <td>soil bulk density, unit: Mg m<sup>-3</sup></td>
+                    </tr>
+                    <tr>
+                        <td><i>F</i></td>
+                        <td>a correction factor that has no unit and ranges from 1.1 to 1.3 depending on
+                            <i>ESP<sub>f</sub></i> or <i>SAR<sub>f</sub></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><i>p</i></td>
+                        <td>gypsum purity, unit: %</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <div id="contactDiv" class="nodisplay">
+            <br>
+            <div class="titleDiv">
+                <h2 class="text-center">Contact Us</h2>
+            </div>
+            <br>
+
+            <h6>If you have any questions of concerns, please contact:</h6>
+            <div class="text-center">
+                <a href="https://www.ndsu.edu/snrs/people/faculty/tom_desutter/" target="_blank"><img
+                        src="images/TomDeSutter.jpg" alt="Dr. Tom DeSutter" class="photocss img-circle"></a>
+                <br />
+                <a href="https://www.ndsu.edu/snrs/people/faculty/tom_desutter/" target="_blank">
+                    <h5>Dr.
+                        Tom DeSutter</h5>
+                </a>
+                <h6>Soil Science Professor & Program Lead</h6>
+                <div class="center-div">
+                    <table>
+                        <tr>
+                            <td><u>Office:</u></td>
+                            <td><b>Walster Hall 231, NDSU</b></td>
+                        </tr>
+                        <tr>
+                            <td><u>Phone:</u></td>
+                            <td><b>701-231-8690</b></td>
+                        </tr>
+                        <tr>
+                            <td><u>Email:</u></td>
+                            <td><b>Thomas.Desutter@ndsu.edu</b></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
             <br />
-            <p>
-                Welcome to the NDSU gypsum requirement (GR) mobile app. The calculations are based on the
-                equation of Oster et al. (1999).
-                To determine GR (in Mg/ha; e.g. 1 Mg/ha = 0.44609 tons/acre) the equation requires knowledge of
-                the 1) depth, D,
-                (in meters; e.g. 0.15 m = 6 inches) to which the gypsum will be applied, 2) the bulk density,
-                Bd, of the soil (in Mg/m3; e.g. 1 Mg/m3 = 1 g/cm3; default value in the calculator is 1.47
-                Mg/m3),
-                3) the cation exchange capacity, CEC, of the soil (in mmolc/kg; e.g. 100mmolc/kg = 10cmolc/kg =
-                10meq/100g soil), 4) the reaction efficiency factor, F,
-                which is unitless (e.g. choose 1.3 if the final ESP is 5 and 1.1 if the final ESP is 15 or
-                greater), 5) the initial ESP, ESPi,
-                which is determined by a qualified laboratory (ESP is a % of the Na ions on the soil's exchange
-                sites), 6) the target, final ESP, ESPf, and 7) the purity of the gypsum being used (in %).
-            </p>
-            <p>
-                You will need to adjust the final mass of gypsum based on the moisture content of the product
-                you are using. For example,
-                if the moisture content is 20% then take GR x 1.2 to get the mass of moist gypsum needed to
-                supply GR.
-            </p>
-            <p>
-                You can substitute the sodium adsorption ratio (SAR) determined from a saturated paste extract
-                for the ESP if the ESP is less than 50.
-            </p>
-            <p>
-                The cost of applying gypsum will be much greater than the costs for determining the soil metrics
-                outlined above so have your soils analyzed by your regional soil testing laboratory.
-                Depth of your soil sample should be great enough to understand the depth that gypsum should be
-                incorporated.
-                Gypsum should be placed as near to the depth of sodic behavior as possible to maximize its
-                effectiveness.
-            </p>
-            <p>
-                [Reference]<br />
-                <i>
-                    Oster, J.D., I. Shainberg, and I.P. Abrol. 1999. Reclamation of salt-affected soils. In 806
-                    Agricultural Drainage.
-                    Agronomy Monograph no. 38. American Society of Agronomy, 807 Crop Science Society of
-                    America, Soil Science Society of America,
-                    677 S. Segoe Rd. 808 Madison, WI 53711. USA. p.659-691.
-                </i>
-            </p>
-
-            <p style="background-color:antiquewhite;">[App Developer] <b>Honggang Bu</b></p>
         </div>
-
     </div>
-    <div id="equationDiv" class="nodisplay">
-        <p>This is equation page.</p>
-    </div>
-    <div id="contactDiv" class="nodisplay">
-        <p>This is contact page.</p>
-        <br />
-        <h5>For more information, please contact:</h5>
-        <div>
-            <a href="https://www.ndsu.edu/soils/personnel/faculty/dr_tom_desutter/" target="_blank"><img
-                    src="images/DeSutter.jpg" alt="Dr. Tom DeSutter" class="photocss img-circle"></a>
-            <br />
-            <a href="https://www.ndsu.edu/soils/personnel/faculty/dr_tom_desutter/" target="_blank"><span
-                    id="TomName">Dr. Tom DeSutter</span></a>
-            <p style="font-size:small; font-weight:bold;">Professor <br /> Soil Science Program Leader</p>
-        </div>
-        <br />
-
-        <div id="contactInfo">
-            <p><u>Office:</u> <b>233 Walster Hall, Box 6050, NDSU</b></p>
-            <p><u>Phone:</u> <b>701-231-8690</b></p>
-            <p><u>Email:</u> <b>Thomas.Desutter@ndsu.edu</b></p>
-        </div>
-
-    </div>
-
     <footer class="text-center">
         <span>Department of Soil Science, North Dakota State University</span>
         <br>

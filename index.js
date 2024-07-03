@@ -34,6 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
     Calculation();
 
     OnResetBtnClick();
+
+    OnEquationLinkClick();
 });
 
 // main navigation buttons click/switch
@@ -78,6 +80,19 @@ function HandleSectionDisplay(sections, activeKey) {
             }
         }
     }
+}
+
+function OnEquationLinkClick() {
+    document.getElementById('equationLink').addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default action of the link
+
+        document.getElementById('aboutDiv').style.display = 'none';
+        document.getElementById('equationDiv').style.display = 'block';
+        const navEquation = document.getElementById('navEquation');
+        navEquation.classList.add('active');
+        const navAbout = document.getElementById('navAbout');
+        navAbout.classList.remove('active');
+    });
 }
 
 // auto collapse the main collapsible nav button
