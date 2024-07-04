@@ -96,3 +96,13 @@ footer {
 td {
     text-align: left;
 }
+
+img.half {
+    height: 50%;
+    width: 50%;
+}
+
+page-padding {
+    padding-left: 25%;
+    padding-right: 25%;
+}

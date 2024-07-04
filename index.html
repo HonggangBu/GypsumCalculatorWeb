@@ -53,128 +53,150 @@
                 <h2 class="text-center">Gypsum Requirement Calculator</h2>
             </div>
             <br>
-            <form id="myForm" class="container">
-                <div class="row mb-3">
-                    <label for="depth" class="col-sm-8 col-form-label text-sm-end"><strong>Soil Depth
-                            (m):</strong></label>
-                    <div class="col-sm-4 clearable">
-                        <input type="number" class="form-control" id="depth" name="depth" required min="0" step="0.01">
-                        <button type="button" class="clear-button" id="clearDepthButton">&times;</button>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label for="density" class="col-sm-8 col-form-label text-sm-end"><strong>Soil Bulk Density (Mg
-                            m<sup>-3</sup>):</strong></label>
-                    <div class="col-sm-4 clearable">
-                        <input type="number" class="form-control" id="density" name="density" required min="0"
-                            step="0.01">
-                        <button type="button" class="clear-button" id="clearDensityButton">&times;</button>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label for="cec" class="col-sm-8 col-form-label text-sm-end"><strong>CEC (mmol<sub>c</sub>
-                            kg<sup>-1</sup>):</strong></label>
-                    <div class="col-sm-4 clearable">
-                        <input type="number" class="form-control" id="cec" name="cec" required min="0" step="0.01">
-                        <button type="button" class="clear-button" id="clearCecButton">&times;</button>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label for="purity" class="col-sm-8 col-form-label text-sm-end"><strong>Gypsum Purity
-                            (%):</strong></label>
-                    <div class="col-sm-4 clearable">
-                        <input type="number" class="form-control" id="purity" name="purity" required min="0.1" max="100"
-                            step="0.1">
-                        <button type="button" class="clear-button" id="clearPurityButton">&times;</button>
-                    </div>
-                </div>
-                <br /><br />
 
-                <div class="mb-3">
-                    <h5>I'd like to use:</h5>
-                    <div class="center-div">
-                        <label class="radio-inline">
-                            <input type="radio" name="optradio" checked="checked" value="esp">&nbsp;<strong>ESP</strong>
-                        </label>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label class="radio-inline">
-                            <input type="radio" name="optradio" value="sar">&nbsp;<strong>SAR</strong>
-                        </label>
+
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                    <form id="myForm" class="container">
+                        <div class="row mb-3">
+                            <label for="depth" class="col-sm-8 col-form-label text-sm-end"><strong>Soil Depth
+                                    (m):</strong></label>
+                            <div class="col-sm-4 clearable">
+                                <input type="number" class="form-control" id="depth" name="depth" required min="0"
+                                    step="0.01">
+                                <button type="button" class="clear-button" id="clearDepthButton">&times;</button>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="density" class="col-sm-8 col-form-label text-sm-end"><strong>Soil Bulk Density
+                                    (Mg
+                                    m<sup>-3</sup>):</strong></label>
+                            <div class="col-sm-4 clearable">
+                                <input type="number" class="form-control" id="density" name="density" required min="0"
+                                    step="0.01">
+                                <button type="button" class="clear-button" id="clearDensityButton">&times;</button>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="cec" class="col-sm-8 col-form-label text-sm-end"><strong>CEC (mmol<sub>c</sub>
+                                    kg<sup>-1</sup>):</strong></label>
+                            <div class="col-sm-4 clearable">
+                                <input type="number" class="form-control" id="cec" name="cec" required min="0"
+                                    step="0.01">
+                                <button type="button" class="clear-button" id="clearCecButton">&times;</button>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="purity" class="col-sm-8 col-form-label text-sm-end"><strong>Gypsum Purity
+                                    (%):</strong></label>
+                            <div class="col-sm-4 clearable">
+                                <input type="number" class="form-control" id="purity" name="purity" required min="0.1"
+                                    max="100" step="0.1">
+                                <button type="button" class="clear-button" id="clearPurityButton">&times;</button>
+                            </div>
+                        </div>
+                        <br /><br />
+
+                        <div class="mb-3">
+                            <h5>I'd like to use:</h5>
+                            <div class="center-div">
+                                <label class="radio-inline">
+                                    <input type="radio" name="optradio" checked="checked"
+                                        value="esp">&nbsp;<strong>ESP</strong>
+                                </label>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <label class="radio-inline">
+                                    <input type="radio" name="optradio" value="sar">&nbsp;<strong>SAR</strong>
+                                </label>
+                                <br>
+                            </div>
+                            <div class="center-div">
+                                <p>Note: when the initial ESP value is no less than 50,
+                                    you can only use ESP for calculating;
+                                    otherwise, you can choose either ESP or SAR.
+                                </p>
+                            </div>
+                            <div id="espInputDiv">
+                                <div class="row mb-3">
+                                    <label for="initialESP" class="col-sm-8 col-form-label text-sm-end"><strong>Initial
+                                            ESP
+                                            (%):</strong></label>
+                                    <div class="col-sm-4 clearable">
+                                        <input type="number" class="form-control" id="initialESP" name="initialESP"
+                                            min="0.1" max="100" step="0.1" required>
+                                        <button type="button" class="clear-button"
+                                            id="clearInitialESPButton">&times;</button>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="targetESP" class="col-sm-8 col-form-label text-sm-end"><strong>Target
+                                            ESP
+                                            (%):</strong></label>
+                                    <div class="col-sm-4 clearable">
+                                        <input type="number" class="form-control" id="targetESP" name="targetESP"
+                                            min="0" max="100" step="0.1" required>
+                                        <button type="button" class="clear-button"
+                                            id="clearTargetESPButton">&times;</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="sarInputDiv" class="nodisplay">
+                                <div class="row mb-3">
+                                    <label for="initialSAR" class="col-sm-8 col-form-label text-sm-end"><strong>Initial
+                                            SAR
+                                            (%):</strong></label>
+                                    <div class="col-sm-4 clearable">
+                                        <input type="number" class="form-control" id="initialSAR" name="initialSAR"
+                                            min="0.1" max="100" step="0.1">
+                                        <button type="button" class="clear-button"
+                                            id="clearInitialSARButton">&times;</button>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="targetSAR" class="col-sm-8 col-form-label text-sm-end"><strong>Target
+                                            SAR
+                                            (%):</strong></label>
+                                    <div class="col-sm-4 clearable">
+                                        <input type="number" class="form-control" id="targetSAR" name="targetSAR"
+                                            min="0" max="100" step="0.1">
+                                        <button type="button" class="clear-button"
+                                            id="clearTargetSARButton">&times;</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3" id="calculateBtnDiv">
+                            <div class="d-grid">
+                                <button type="submit" id="calculateBtn" class="btn btn-primary btn-block">
+                                    <h4>Calculate</h4>
+                                </button>
+                            </div>
+                        </div>
+                        <hr>
+                        <h5>Your Gypsum Requirement Result:</h5>
+
+                        <div class="mb-3" id="resultDiv">
+                            <br>
+                            <div class="resultText">
+                                <input type="text" id="mghaResult" readonly class="resultText2">
+                            </div>
+                            <span>or</span>
+                            <br>
+                            <div class="resultText">
+                                <input type="text" id="ustonResult" readonly class="resultText2">
+                            </div>
+                            <br>
+                        </div>
+                        <div class="d-grid">
+                            <button type="button" id="resetBtn" class="btn btn-secondary btn-block">RESET</button>
+                        </div>
                         <br>
-                    </div>
-                    <p>Note: when the initial ESP value is no less than 50, you can only use ESP for calculating;
-                        otherwise, you can choose either ESP or SAR.</p>
-
-                    <br />
-                    <div id="espInputDiv">
-                        <div class="row mb-3">
-                            <label for="initialESP" class="col-sm-8 col-form-label text-sm-end"><strong>Initial ESP
-                                    (%):</strong></label>
-                            <div class="col-sm-4 clearable">
-                                <input type="number" class="form-control" id="initialESP" name="initialESP" min="0.1"
-                                    max="100" step="0.1" required>
-                                <button type="button" class="clear-button" id="clearInitialESPButton">&times;</button>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="targetESP" class="col-sm-8 col-form-label text-sm-end"><strong>Target ESP
-                                    (%):</strong></label>
-                            <div class="col-sm-4 clearable">
-                                <input type="number" class="form-control" id="targetESP" name="targetESP" min="0"
-                                    max="100" step="0.1" required>
-                                <button type="button" class="clear-button" id="clearTargetESPButton">&times;</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="sarInputDiv" class="nodisplay">
-                        <div class="row mb-3">
-                            <label for="initialSAR" class="col-sm-8 col-form-label text-sm-end"><strong>Initial SAR
-                                    (%):</strong></label>
-                            <div class="col-sm-4 clearable">
-                                <input type="number" class="form-control" id="initialSAR" name="initialSAR" min="0.1"
-                                    max="100" step="0.1">
-                                <button type="button" class="clear-button" id="clearInitialSARButton">&times;</button>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="targetSAR" class="col-sm-8 col-form-label text-sm-end"><strong>Target SAR
-                                    (%):</strong></label>
-                            <div class="col-sm-4 clearable">
-                                <input type="number" class="form-control" id="targetSAR" name="targetSAR" min="0"
-                                    max="100" step="0.1">
-                                <button type="button" class="clear-button" id="clearTargetSARButton">&times;</button>
-                            </div>
-                        </div>
-                    </div>
+                    </form>
                 </div>
-                <div class="mb-3" id="calculateBtnDiv">
-                    <div class="d-grid">
-                        <button type="submit" id="calculateBtn" class="btn btn-primary btn-block">
-                            <h4>Calculate</h4>
-                        </button>
-                    </div>
-                </div>
-                <hr>
-                <h5>Your Gypsum Requirement Result:</h5>
-
-                <div class="mb-3" id="resultDiv">
-                    <br>
-                    <div class="resultText">
-                        <input type="text" id="mghaResult" readonly class="resultText2">
-                    </div>
-                    <span>or</span>
-                    <br>
-                    <div class="resultText">
-                        <input type="text" id="ustonResult" readonly class="resultText2">
-                    </div>
-                    <br>
-                </div>
-                <div class="d-grid">
-                    <button type="button" id="resetBtn" class="btn btn-secondary btn-block">RESET</button>
-                </div>
-                <br>
+                <div class="col-sm-3"></div>
+            </div>
         </div>
-        </form>
 
         <div id="aboutDiv" class="nodisplay">
             <br>
@@ -332,21 +354,22 @@
             </div>
             <br>
 
-            <h6>If you have any questions of concerns, please contact:</h6>
+            <h6>If you have any questions or concerns, please contact:</h6>
             <div class="text-center">
                 <a href="https://www.ndsu.edu/snrs/people/faculty/tom_desutter/" target="_blank"><img
-                        src="images/TomDeSutter.jpg" alt="Dr. Tom DeSutter" class="photocss img-circle"></a>
+                        src="images/TomDeSutter.jpg" alt="Dr. Tom DeSutter" class="half"></a>
                 <br />
                 <a href="https://www.ndsu.edu/snrs/people/faculty/tom_desutter/" target="_blank">
-                    <h5>Dr.
-                        Tom DeSutter</h5>
+                    <h5>Dr. Tom DeSutter</h5>
                 </a>
-                <h6>Soil Science Professor & Program Lead</h6>
+                <h6><b>Professor & Program Lead</b></h6>
+                <h7><b>Department of Soil Science, NDSU</b></h7>
+                <br>
                 <div class="center-div">
                     <table>
                         <tr>
                             <td><u>Office:</u></td>
-                            <td><b>Walster Hall 231, NDSU</b></td>
+                            <td><b>Walster Hall 231</b></td>
                         </tr>
                         <tr>
                             <td><u>Phone:</u></td>
