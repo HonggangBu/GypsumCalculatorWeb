@@ -204,68 +204,81 @@
                 <h2 class="text-center">About the Gypsum Requirement Calculator</h2>
             </div>
             <br>
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+                    <div id="intro">
+                        <br />
+                        <p>
+                            Welcome to use the NDSU gypsum requirement (GR) calculator. The calculations are based on
+                            the <a href="#" id="equationLink">
+                                equation</a> of <a href="images/Reclamation of Salt-Affected Soils.pdf"
+                                target="_blank">Oster et
+                                al.
+                                (1999)</a>.
+                            To determine GR (in Mg/ha; e.g. 1 Mg/ha = 0.44609 tons/acre) the equation requires knowledge
+                            of
+                            the <br>
+                        </p>
+                        <dl>
+                            <dt>- depth of the soil (unit: m)</dt>
+                            <dd>the depth to which the gypsum will be applied</dd>
+                            <dt>- bulk density of the soil (unit: Mg/m<sup>3</sup>)</dt>
+                            <dd>default value in the calculator is 1.47 Mg/m3</dd>
+                            <dt>- cation exchange capacity (unit: mmolc/kg)</dt>
+                            <dd>e.g. 100mmolc/kg = 10cmolc/kg = 10meq/100g soil</dd>
+                            <dt>- reaction efficiency factor (unitless)</dt>
+                            <dd>e.g. choose 1.3 if the final ESP is 5 and 1.1 if the final ESP is 15 or
+                                greater</dd>
+                            <dt>- initial ESP (unit: %)</dt>
+                            <dd>the initial ESP determined by a qualified laboratory. ESP is a % of the Na ions on the
+                                soil's
+                                exchange sites</dd>
+                            <dt>- target or final ESP (unit: %)</dt>
+                            <dd>the desired ESP</dd>
+                            <dt>- purity of the gypsum being used (unit: %)</dt>
+                            <dd>the purity of the gypsum is calculated by dividing Sulphur % by 0.186</dd>
+                        </dl>
+                        <p>
+                            You will need to adjust the final mass of gypsum based on the moisture content of the
+                            product
+                            you are using. For example,
+                            if the moisture content is 20% then take GR x 1.2 to get the mass of moist gypsum needed to
+                            supply GR.
+                        </p>
+                        <p>
+                            You can substitute the sodium adsorption ratio (SAR) determined from a saturated paste
+                            extract
+                            for the ESP if the ESP is less than 50.
+                        </p>
+                        <p>
+                            The cost of applying gypsum will be much greater than the costs for determining the soil
+                            metrics
+                            outlined above so have your soils analyzed by your regional soil testing laboratory.
+                            Depth of your soil sample should be great enough to understand the depth that gypsum should
+                            be
+                            incorporated.
+                            Gypsum should be placed as near to the depth of sodic behavior as possible to maximize its
+                            effectiveness.
+                        </p>
+                        <p>
+                            [Reference]<br />
+                            <a href="images/Reclamation of Salt-Affected Soils.pdf" target="_blank">
+                                <i>
+                                    Oster, J.D., I. Shainberg, and I.P. Abrol. 1999. Reclamation of salt-affected soils.
+                                    In 806
+                                    Agricultural Drainage.
+                                    Agronomy Monograph no. 38. American Society of Agronomy, 807 Crop Science Society of
+                                    America, Soil Science Society of America,
+                                    677 S. Segoe Rd. 808 Madison, WI 53711. USA. p.659-691.
+                                </i>
+                            </a>
+                        </p>
 
-            <div id="intro">
-                <br />
-                <p>
-                    Welcome to use the NDSU gypsum requirement (GR) calculator. The calculations are based on the <a
-                        href="#" id="equationLink">
-                        equation</a> of <a href="images/Reclamation of Salt-Affected Soils.pdf" target="_blank">Oster et
-                        al.
-                        (1999)</a>.
-                    To determine GR (in Mg/ha; e.g. 1 Mg/ha = 0.44609 tons/acre) the equation requires knowledge of
-                    the <br>
-                <dl>
-                    <dt>depth of the soil (unit: m)</dt>
-                    <dd>- the depth to which the gypsum will be applied</dd>
-                    <dt>bulk density of the soil (unit: Mg/m<sup>3</sup>)</dt>
-                    <dd>- default value in the calculator is 1.47 Mg/m3</dd>
-                    <dt>cation exchange capacity (unit: mmolc/kg)</dt>
-                    <dd>- e.g. 100mmolc/kg = 10cmolc/kg = 10meq/100g soil</dd>
-                    <dt>reaction efficiency factor (unitless)</dt>
-                    <dd>- e.g. choose 1.3 if the final ESP is 5 and 1.1 if the final ESP is 15 or
-                        greater</dd>
-                    <dt>initial ESP (unit: %)</dt>
-                    <dd>- the initial ESP determined by a qualified laboratory. ESP is a % of the Na ions on the soil's
-                        exchange sites</dd>
-                    <dt>target or final ESP (unit: %)</dt>
-                    <dd>- the desired ESP</dd>
-                    <dt>purity of the gypsum being used (unit: %)</dt>
-                    <dd>- the purity of the gypsum is calculated by dividing Sulphur % by 0.186</dd>
-                </dl>
-                <p>
-                    You will need to adjust the final mass of gypsum based on the moisture content of the product
-                    you are using. For example,
-                    if the moisture content is 20% then take GR x 1.2 to get the mass of moist gypsum needed to
-                    supply GR.
-                </p>
-                <p>
-                    You can substitute the sodium adsorption ratio (SAR) determined from a saturated paste extract
-                    for the ESP if the ESP is less than 50.
-                </p>
-                <p>
-                    The cost of applying gypsum will be much greater than the costs for determining the soil metrics
-                    outlined above so have your soils analyzed by your regional soil testing laboratory.
-                    Depth of your soil sample should be great enough to understand the depth that gypsum should be
-                    incorporated.
-                    Gypsum should be placed as near to the depth of sodic behavior as possible to maximize its
-                    effectiveness.
-                </p>
-                <p>
-                    [Reference]<br />
-                    <a href="images/Reclamation of Salt-Affected Soils.pdf" target="_blank">
-                        <i>
-                            Oster, J.D., I. Shainberg, and I.P. Abrol. 1999. Reclamation of salt-affected soils. In 806
-                            Agricultural Drainage.
-                            Agronomy Monograph no. 38. American Society of Agronomy, 807 Crop Science Society of
-                            America, Soil Science Society of America,
-                            677 S. Segoe Rd. 808 Madison, WI 53711. USA. p.659-691.
-                        </i>
-                    </a>
-                </p>
-
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
             </div>
-
         </div>
         <div id="equationDiv" class="nodisplay">
             <br>
@@ -279,7 +292,7 @@
                 GR<sub>adj</sub>=0.86*F*D*&rho;<sub>b</sub>*CEC*(ESP<sub>i</sub>-ESP<sub>f</sub>)/p</p>
             <br>
             <p id="fmla" class="equation">
-                GR<sub>adj</sub>=0.86*F*D*&rho;<sub>b</sub>*CEC*(SAR<sub>i</sub>-SAR<sub>f</sub>)/pC
+                GR<sub>adj</sub>=0.86*F*D*&rho;<sub>b</sub>*CEC*(SAR<sub>i</sub>-SAR<sub>f</sub>)/p</p>
             <p>
                 Note: The second formula requires that the initial ESP value is less than 50.
             </p>
