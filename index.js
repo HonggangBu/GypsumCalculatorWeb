@@ -165,7 +165,7 @@ function GetFactorValue(targetValue) {
 
 
 function GypsumRequirement(factor, depth, density, cec, initialValue, targetValue, purity) {
-    return 0.86 * factor * depth * density * cec * (initialValue - targetValue) / purity;
+    return 8.6 * factor * depth * density * cec * (initialValue - targetValue) / purity;
 }
 
 

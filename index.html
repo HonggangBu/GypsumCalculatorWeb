@@ -70,17 +70,16 @@
                         </div>
                         <div class="row mb-3">
                             <label for="density" class="col-sm-8 col-form-label text-sm-end"><strong>Soil Bulk Density
-                                    (Mg
-                                    m<sup>-3</sup>):</strong></label>
+                                    (Mg/m<sup>3</sup>):</strong></label>
                             <div class="col-sm-4 clearable">
-                                <input type="number" class="form-control" id="density" name="density" required min="0"
-                                    step="0.01">
+                                <input type="number" class="form-control" id="density" name="density" value="1.47"
+                                    required min="0" step="0.01">
                                 <button type="button" class="clear-button" id="clearDensityButton">&times;</button>
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="cec" class="col-sm-8 col-form-label text-sm-end"><strong>CEC (mmol<sub>c</sub>
-                                    kg<sup>-1</sup>):</strong></label>
+                            <label for="cec" class="col-sm-8 col-form-label text-sm-end"><strong>CEC
+                                    (cmol<sub>c</sub>/kg):</strong></label>
                             <div class="col-sm-4 clearable">
                                 <input type="number" class="form-control" id="cec" name="cec" required min="0"
                                     step="0.01">
@@ -224,9 +223,9 @@
                             <dt>- depth of the soil (unit: m)</dt>
                             <dd>the depth to which the gypsum will be applied</dd>
                             <dt>- bulk density of the soil (unit: Mg/m<sup>3</sup>)</dt>
-                            <dd>default value in the calculator is 1.47 Mg/m3</dd>
-                            <dt>- cation exchange capacity (unit: mmolc/kg)</dt>
-                            <dd>e.g. 100mmolc/kg = 10cmolc/kg = 10meq/100g soil</dd>
+                            <dd>default value in the calculator is 1.47 Mg/m<sup>3</sup></dd>
+                            <dt>- cation exchange capacity (unit: cmol<sub>c</sub>/kg)</dt>
+                            <dd>e.g. 10cmol<sub>c</sub>/kg = 10meq/100g soil</dd>
                             <dt>- reaction efficiency factor (unitless)</dt>
                             <dd>e.g. choose 1.3 if the final ESP is 5 and 1.1 if the final ESP is 15 or
                                 greater</dd>
@@ -289,10 +288,10 @@
 
             You can choose either of the following equations to calculate the Gypsum Requirement:
             <p id="fmla" class="equation">
-                GR<sub>adj</sub>=0.86*F*D*&rho;<sub>b</sub>*CEC*(ESP<sub>i</sub>-ESP<sub>f</sub>)/p</p>
+                GR<sub>adj</sub>=8.6*F*D*&rho;<sub>b</sub>*CEC*(ESP<sub>i</sub>-ESP<sub>f</sub>)/p</p>
             <br>
             <p id="fmla" class="equation">
-                GR<sub>adj</sub>=0.86*F*D*&rho;<sub>b</sub>*CEC*(SAR<sub>i</sub>-SAR<sub>f</sub>)/p</p>
+                GR<sub>adj</sub>=8.6*F*D*&rho;<sub>b</sub>*CEC*(SAR<sub>i</sub>-SAR<sub>f</sub>)/p</p>
             <p>
                 Note: The second formula requires that the initial ESP value is less than 50.
             </p>
@@ -308,7 +307,7 @@
                 <tbody>
                     <tr>
                         <td><i>GR<sub>adj</sub></i></td>
-                        <td>Amount of gypsum needed. Adjusted by its purity. <br />unit: Mg ha<sup>-1</sup></td>
+                        <td>Amount of gypsum needed. Adjusted by its purity. <br />unit: Mg/ha</td>
                     </tr>
                     <tr>
                         <td><i>ESP</i></td>
@@ -336,7 +335,7 @@
                     </tr>
                     <tr>
                         <td><i>CEC</i></td>
-                        <td>cation exchange capacity, unit: mmol<sub>c</sub> kg<sup>-1</sup></td>
+                        <td>cation exchange capacity, unit: cmol<sub>c</sub>/kg</td>
                     </tr>
                     <tr>
                         <td><i>D</i></td>
@@ -344,7 +343,7 @@
                     </tr>
                     <tr>
                         <td><i>&rho;<sub>b</sub></i></td>
-                        <td>soil bulk density, unit: Mg m<sup>-3</sup></td>
+                        <td>soil bulk density, unit: Mg/m<sup>3</sup></td>
                     </tr>
                     <tr>
                         <td><i>F</i></td>
@@ -375,7 +374,7 @@
                     <h5>Dr. Tom DeSutter</h5>
                 </a>
                 <h6><b>Professor & Program Lead</b></h6>
-                <h7><b>Department of Soil Science, NDSU</b></h7>
+                <h7><b>School of Natural Resource Sciences, NDSU</b></h7>
                 <br>
                 <div class="center-div">
                     <table>
@@ -398,7 +397,9 @@
         </div>
     </div>
     <footer class="text-center">
-        <span>Department of Soil Science, North Dakota State University</span>
+        <span><a href="https://www.ndsu.edu/snrs/" target="_blank">School of Natural Resource Sciences</a></span>
+        <br>
+        <span><a href="https://www.ndsu.edu/" target="_blank">North Dakota State University</a></span>
         <br>
         Copyright &copy;
         <script>document.write(new Date().getFullYear())</script>

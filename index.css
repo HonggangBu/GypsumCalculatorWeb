@@ -17,6 +17,10 @@ footer {
     text-align: center;
 }
 
+footer a {
+    color: white;
+}
+
 .bg-darkblue {
     background-color: darkslateblue;
 }
